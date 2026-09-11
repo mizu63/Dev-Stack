@@ -11,7 +11,7 @@ const App = () => {
       <Nav/>
       <Hero/>
       <Technologies/>
-      <Players/>
+  
     </>
   );
 }
