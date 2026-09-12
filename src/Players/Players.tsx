@@ -4,6 +4,7 @@ import PlayerCard from "../Component/PlayerCard";
 
 interface PlayersProps {
   handleAddTechnology: (technology: TechnologyType) => void;
+  selectedTechnologies: TechnologyType[];
 }
 
 const playersPromise = async (): Promise<TechnologyType[]> => {
@@ -13,13 +14,17 @@ const playersPromise = async (): Promise<TechnologyType[]> => {
   return data;
 };
 
-const Players = ({ handleAddTechnology }: PlayersProps) => {
+const Players = ({
+  handleAddTechnology,
+  selectedTechnologies,
+}: PlayersProps) => {
   return (
     <div>
       <Suspense fallback={<p>Loading...</p>}>
         <PlayerCard
           playersPromise={playersPromise()}
           handleAddTechnology={handleAddTechnology}
+          selectedTechnologies={selectedTechnologies}
         />
       </Suspense>
     </div>

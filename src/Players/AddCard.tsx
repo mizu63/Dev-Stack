@@ -1,11 +1,29 @@
 import React from "react";
 import type { TechnologyType } from "./Type";
+import { FaJava } from "react-icons/fa";
+import {
+  SiReact,
+  SiVuedotjs,
+  SiSvelte,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiRedis,
+  SiJavascript,
+  SiTypescript,
+  SiTailwindcss,
+  SiDocker,
+} from "react-icons/si";
+import { MdDelete } from "react-icons/md";
+
 
 interface YourStackProps {
   selectedTechnologies: TechnologyType[];
+  handleRemoveTechnology: (id: number) => void;
+  handleRemoveAll: () => void;
 }
 
-const YourStack = ({ selectedTechnologies }: YourStackProps) => {
+const YourStack = ({ selectedTechnologies, handleRemoveTechnology, handleRemoveAll }: YourStackProps) => {
   return (
     <div className="w-full max-w-[315px] rounded-[20px] border border-[#E8EEF5] bg-white p-4 shadow-sm">
       <h2 className="text-[18px] font-semibold text-[#0F172A]">
@@ -13,9 +31,10 @@ const YourStack = ({ selectedTechnologies }: YourStackProps) => {
       </h2>
 
       <p className="mt-1 text-[12px] text-[#94A3B8]">
-        {selectedTechnologies.length === 0
+        {/* {selectedTechnologies.length === 0
           ? "No technologies selected yet."
-          : `${selectedTechnologies.length} technologies selected.`}
+          : `${selectedTechnologies.length} technologies selected.`} */}
+        {selectedTechnologies.length} technologies selected.
       </p>
 
       <div className="mt-3 min-h-[60px] rounded-[12px] border border-dashed border-[#D8E2EE] p-2">
@@ -32,22 +51,49 @@ const YourStack = ({ selectedTechnologies }: YourStackProps) => {
                 key={technology.id}
                 className="rounded-xl border border-gray-200 bg-white p-3 shadow-sm"
               >
-                <div className="flex justify-between items-center mb-2">
-                  <div className="w-9 h-9 bg-gray-50 rounded-lg flex items-center justify-center border">
-                    <span className="text-[13px] font-bold">
-                      {technology.name.charAt(0)}
-                    </span>
+                <div>
+                  <div className=" flex justify-end">
+                    <button
+                      onClick={() => handleRemoveTechnology(technology.id)}
+                      className="text-red-500 text-2xl"
+                    >
+                      <MdDelete />
+                    </button>
                   </div>
+                </div>
+                <div className="flex justify-between items-center mb-2">
+
+                  <div className="w-16 h-16 bg-gray-50 rounded-xl flex items-center justify-center border text-2xl">
+                    {technology.name === "React" && <SiReact className="text-[#61DAFB]" />}
+                    {technology.name === "Vue.js" && <SiVuedotjs className="text-[#42B883]" />}
+                    {technology.name === "Svelte" && <SiSvelte className="text-[#FF3E00]" />}
+                    {technology.name === "Next.js" && <SiNextdotjs className="text-black" />}
+                    {technology.name === "Node.js" && <SiNodedotjs className="text-[#339933]" />}
+                    {technology.name === "PostgreSQL" && <SiPostgresql className="text-[#336791]" />}
+                    {technology.name === "Redis" && <SiRedis className="text-[#DC382D]" />}
+                    {technology.name === "JavaScript" && <SiJavascript className="text-[#F7DF1E]" />}
+                    {technology.name === "TypeScript" && <SiTypescript className="text-[#3178C6]" />}
+                    {technology.name === "Tailwind CSS" && <SiTailwindcss className="text-[#06B6D4]" />}
+                    {technology.name === "Docker" && <SiDocker className="text-[#2496ED]" />}
+                    {technology.name === "Java" && (
+                      <FaJava className="text-[#ED8B00]" />
+                    )}
+                  </div>
+
 
                   <span className="px-2 py-1 text-[9px] font-semibold rounded-full bg-blue-100 text-blue-600">
                     {technology.level}
                   </span>
+
                 </div>
 
-                <h2 className="text-[14px] font-bold text-gray-800 mb-1">
-                  {technology.name}
-                </h2>
+                <div className="flex justify-between items-center">
+                  <h2 className="text-[14px] font-bold text-gray-800 mb-1">
+                    {technology.name}
+                  </h2>
 
+
+                </div>
                 <p className="text-gray-500 text-[10px] leading-4">
                   {technology.description}
                 </p>
@@ -72,6 +118,12 @@ const YourStack = ({ selectedTechnologies }: YourStackProps) => {
           </div>
         )}
       </div>
+      <button
+        onClick={handleRemoveAll}
+        className="mt-3 w-full rounded-xl border border-red-200 bg-red-50 py-2 text-sm font-semibold text-red-500 transition hover:bg-red-500 hover:text-white"
+      >
+        Delete All
+      </button>
     </div>
   );
 };

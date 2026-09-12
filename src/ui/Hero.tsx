@@ -3,7 +3,7 @@ import Heroimage from "../assets/Heroimage.png"
 
 const Hero = () => {
     return (
-        <section className="pt-20">
+        <section className="pt-20 pb-20">
             <div className="container mx-auto grid grid-cols-12 gap-4 py-8 items-start">
                 <div className="col-span-7">
                     <h1 className="text-[40px] font-bold text-[#0F172A] leading-none">
