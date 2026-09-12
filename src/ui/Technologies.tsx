@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Players from "../Players/Players";
 import AddCard from "../Players/AddCard";
 import type { TechnologyType } from "../Players/Type";

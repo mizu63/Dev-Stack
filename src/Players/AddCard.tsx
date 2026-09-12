@@ -1,4 +1,4 @@
-import React from "react";
+
 import type { TechnologyType } from "./Type";
 import { FaJava } from "react-icons/fa";
 import {

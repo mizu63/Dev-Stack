@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import { use } from "react";
 import type { TechnologyType } from "../Players/Type";
 import { FaJava } from "react-icons/fa";
 import {
