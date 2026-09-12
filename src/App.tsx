@@ -2,6 +2,7 @@
 import Nav from './ui/Nav';
 import Hero from './ui/Hero';
 import Technologies from './ui/Technologies';
+import Footer from './ui/Footer';
 
 
 
@@ -11,7 +12,7 @@ const App = () => {
       <Nav/>
       <Hero/>
       <Technologies/>
-  
+      <Footer/>
     </>
   );
 }

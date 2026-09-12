@@ -118,12 +118,13 @@ const YourStack = ({ selectedTechnologies, handleRemoveTechnology, handleRemoveA
           </div>
         )}
       </div>
-      <button
-        onClick={handleRemoveAll}
-        className="mt-3 w-full rounded-xl border border-red-200 bg-red-50 py-2 text-sm font-semibold text-red-500 transition hover:bg-red-500 hover:text-white"
-      >
-        Delete All
-      </button>
+     {selectedTechnologies.length > 0 && (
+  <button
+    onClick={handleRemoveAll}
+    className="mt-3 w-full rounded-xl border border-red-200 bg-red-50 py-2 text-sm font-semibold text-red-500 transition hover:bg-red-500 hover:text-white">
+    Remove All
+  </button>
+)}
     </div>
   );
 };

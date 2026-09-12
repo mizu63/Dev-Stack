@@ -21,25 +21,19 @@ export interface PlayersProps {
   selectedTechnologies: TechnologyType[];
 }
 
-const PlayerCard = ({
-  playersPromise,
-  handleAddTechnology,
-  selectedTechnologies,
-}: PlayersProps) => {
+const PlayerCard = ({playersPromise,handleAddTechnology,selectedTechnologies,}: PlayersProps) => {
+
   const playerAll = use(playersPromise);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {playerAll.map((player) => {
         const isSelected = selectedTechnologies.some(
-          (item) => item.id === player.id
-        );
+          (item) => item.id === player.id);
 
         return (
-          <div
-            key={player.id}
-            className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-          >
+          <div key={player.id}
+           className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
             <div className="flex justify-between items-center mb-4">
               <div className="w-16 h-16 bg-gray-50 rounded-xl flex items-center justify-center border text-2xl">
                 {player.name === "React" && (
@@ -109,8 +103,7 @@ const PlayerCard = ({
               </span>
             </div>
 
-            <button
-              onClick={() => handleAddTechnology(player)}
+            <button onClick={() => handleAddTechnology(player)}
               className={`w-full py-1 rounded-xl text-white font-semibold active:scale-95 transition-all duration-200 ${isSelected
                   ? "bg-green-500"
                   : "bg-black text-white hover:opacity-90"
@@ -118,11 +111,7 @@ const PlayerCard = ({
             >
               {isSelected ? "Selected" : "Add to Stack"}
             </button>
-            {/* {isSelected && (
-  <p className="mt-2 text-center text-[12px] text-green-500 font-medium">
-    Technology selected successfully!
-  </p>
-)} */}
+  
           </div>
         );
       })}
