@@ -109,7 +109,7 @@ const PlayerCard = ({playersPromise,handleAddTechnology,selectedTechnologies,}: 
                   : "bg-black text-white hover:opacity-90"
                 }`}
             >
-              {isSelected ? "Selected" : "Add to Stack"}
+              {isSelected ? "✓ Selected" : "Add to Stack"}
             </button>
   
           </div>
