@@ -31,9 +31,7 @@ const YourStack = ({ selectedTechnologies, handleRemoveTechnology, handleRemoveA
       </h2>
 
       <p className="mt-1 text-[12px] text-[#94A3B8]">
-        {/* {selectedTechnologies.length === 0
-          ? "No technologies selected yet."
-          : `${selectedTechnologies.length} technologies selected.`} */}
+        
         {selectedTechnologies.length} technologies selected.
       </p>
 
@@ -119,9 +117,7 @@ const YourStack = ({ selectedTechnologies, handleRemoveTechnology, handleRemoveA
         )}
       </div>
      {selectedTechnologies.length > 0 && (
-  <button
-    onClick={handleRemoveAll}
-    className="mt-3 w-full rounded-xl border border-red-200 bg-red-50 py-2 text-sm font-semibold text-red-500 transition hover:bg-red-500 hover:text-white">
+  <button onClick={handleRemoveAll} className="mt-3 w-full rounded-xl border border-red-200 bg-red-50 py-2 text-sm font-semibold text-red-500 transition hover:bg-red-500 hover:text-white">
     Remove All
   </button>
 )}

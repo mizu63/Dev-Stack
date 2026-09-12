@@ -4,10 +4,9 @@ import Logor from "../assets/Logo.png"
 const Footer = () => {
     return (
         <section className="container mx-auto">
-            {/* <div className="max-w-full flex-col md:flex justify-between pt-10 "> */}
+        
             <div className="max-w-full flex flex-col md:flex-row justify-between pt-10 px-3 md:px-0">
-
-                {/* <div className=" mx-auto md:mx-0 w-full md:w-2/5"> */}
+                
                 <div className="mx-auto flex w-full flex-col items-center text-center md:mx-0 md:w-2/5 md:items-start md:text-left">
                     <div className="flex items-center gap-0.5 pb-2">
                         <img  src={Logor} alt="Logo" />

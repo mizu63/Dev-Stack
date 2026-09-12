@@ -31,7 +31,7 @@ const Technologies = () => {
 
   return (
     <section>
-  <Toaster position="top-right" />
+  <Toaster position="top-center" />
       <div className="container mx-auto">
         <h1 className="text-[36px] font-extrabold leading-10 text-[#0F172A] pb-2  mx-auto md:mx-0  text-center md:text-left">
           Explore the <span className="text-[#EC4899]">Technologies</span>
@@ -41,9 +41,9 @@ const Technologies = () => {
           Pick one technology per category to build your ideal stack.
         </p>
 
-        {/* <div className="max-w-full flex gap-2 pb-7"> */}
+      
         <div className="max-w-full flex flex-col md:flex-row gap-2 pb-7 px-3 md:px-0">
-          {/* <div className="w-3/4"> */}
+        
           <div className="w-full md:w-3/4 flex justify-center">
             <Players
               handleAddTechnology={handleAddTechnology}

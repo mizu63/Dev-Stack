@@ -14,10 +14,7 @@ const playersPromise = async (): Promise<TechnologyType[]> => {
   return data;
 };
 
-const Players = ({
-  handleAddTechnology,
-  selectedTechnologies,
-}: PlayersProps) => {
+const Players = ({handleAddTechnology,selectedTechnologies,}: PlayersProps) => {
   return (
     <div>
       <Suspense fallback={<p>Loading...</p>}>
